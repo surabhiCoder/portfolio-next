@@ -1,65 +1,59 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// import Head from "next/head";
+import "../styles/Home.module.css";
+import HomeAbout from "./components/HomeAbout";
+import HomeAwards from "./components/HomeAwards";
+import HomeBanner from "./components/HomeBanner";
+import HomeBlog from "./components/HomeBlog";
+import HomeContact from "./components/HomeContact";
+import HomeEducation from "./components/HomeEducation";
+import HomeExperience from "./components/HomeExperience";
+import HomePortfolio from "./components/HomePortfolio";
+import HomeWork from "./components/HomeWork";
+
+
+// import { jQuery } from "../assets/js/custom";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <main className="main-left">
+        <HomeBanner />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <section id="about" className="section dark-bg">
+          <div className="container">
+            <HomeAbout />
+            {/* <!-- separated --> */}
+            <div className="separated" />
+            {/* <!-- End separated --> */}
+            <HomeWork />
+            {/* <!-- separated --> */}
+            <div className="separated" />
+            {/* <!-- End separated --> */}
+            {/* <HomeAwards /> */}
+          </div>
+        </section>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        {/* <!-- Resume --> */}
+        <section id="resume" className="section">
+          <div className="container">
+            <HomeExperience />
+            {/* <!-- separated --> */}
+            <div className="separated" />
+            {/* <!-- End separated --> */}
+            <HomeEducation />
+          </div>
+        </section>
+        {/* <!-- Resume End --> */}
+        <HomePortfolio />
+        {/* <HomeBlog /> */}
+        <HomeContact />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      />
+      <script src="../assets/js/custom.js" type="text/javascript" />
+    </>
+  );
 }
